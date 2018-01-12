@@ -18,6 +18,7 @@ public:
 	int findRoot(int i);
 	void createUnion(int p, int q);
 	bool isConnected(int p, int q);
+	void clear();
 
 private:
 	int m_rows;
@@ -110,7 +111,7 @@ void Percolation::print() {
 	}
 
 	std::cout << std::endl;
-
+	/*
 	for (int i = 0; i < m_rows; i++) {
 		for (int j = 0; j < m_cols; j++) {
 			std::cout << m_unions[(i*m_cols) + j] << " ";
@@ -119,6 +120,7 @@ void Percolation::print() {
 	}
 
 	std::cout << std::endl;
+	*/
 }
 
 int Percolation::findRoot(int i) {
@@ -153,6 +155,12 @@ bool Percolation::isConnected(int p, int q) {
 	return findRoot(p) == findRoot(q);
 }
 
+void Percolation::clear() {
+	m_matrix.clear();
+	m_unions.clear();
+	m_nodeCount.clear();
+}
+
 int main() {
 
 	// unit tests
@@ -178,25 +186,35 @@ int main() {
 		std::cout << "width: ";
 		std::cin >> w;
 		
-		Percolation perc(h, w);
+		int iterations = 1000;
+		int cumulativeTotal = 0;
 
 		// Start Timer
 		auto begin = std::chrono::high_resolution_clock::now();
 
-		// Start Test
-		for (int j = 0; j < 80; j++) {
-			perc.open(rand() % perc.getHeight(), rand() % perc.getWidth());
+		for (int cnt = 0; cnt < iterations; cnt++) {
+			Percolation perc(h, w);
+
+			// Start Test
+			int j = 0;
+			while (!perc.percolates()) {
+				int h2 = rand() % perc.getHeight();
+				int w2 = rand() % perc.getWidth();
+				if (!perc.isOpen(h2, w2)) {
+					perc.open(h2, w2);
+					j++;
+				}
+
+			}
+			cumulativeTotal += j;
 		}
-		
+
 		auto end = std::chrono::high_resolution_clock::now();
 		auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count();
-		std::cout << "time elapsed: " << duration << "ns." << std::endl;
 
-		
-		perc.print();
+		std::cout << "average percolation took " << cumulativeTotal/iterations << " attempts" << std::endl;
+		std::cout << "time elapsed: " << duration/1000000 << "ms." << std::endl;
 
-		std::cout << "percolation: " << perc.percolates() << std::endl;
-	
 		std::cout << "enter 0 to exit, 1 to continue";
 		std::cin >> n;
 	
