@@ -6,7 +6,7 @@ This is just some code I wrote while going through the Princeton Algorithms cour
 ## Interesting Examples
 - Week1/UnionFindTests -> analyzes the running time of four different union find algorithms given various user inputs. The four union find algorithms are quick find, quick union, weighted quick union, and weighted quick union with path compression.
 
-- Week1/Assignment1 -> runs a percolation test in Log(n) time on an MxN matrix (user-provided) to assess how many random boxes need to be filled to determine whether the top row and bottom row are connected.  
+- Week1/Assignment1 -> runs a percolation test in Log(n) time on an MxN matrix (user-provided) to assess how many random boxes need to be filled to connect the top row and bottom row of a matrix.  
 
 ## License
 
