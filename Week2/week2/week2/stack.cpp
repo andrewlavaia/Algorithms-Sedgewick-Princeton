@@ -63,7 +63,7 @@ public:
 	}
 
 private:
-	std::shared_ptr<Node> m_first;
+	std::shared_ptr<Node> m_first = nullptr;
 };
 
 int main() {
