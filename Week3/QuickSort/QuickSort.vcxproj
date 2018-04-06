@@ -20,10 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{C30D3E4E-DE94-49AB-8A82-B6D82597E437}</ProjectGuid>
-    <RootNamespace>Week3</RootNamespace>
+    <ProjectGuid>{45AD95A2-D36E-40A5-9984-C8CA354C24BC}</ProjectGuid>
+    <RootNamespace>QuickSort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
-    <ProjectName>PriorityQueue</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -117,10 +116,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="maxpq.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="maxpq.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

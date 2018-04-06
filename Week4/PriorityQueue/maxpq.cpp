@@ -24,10 +24,18 @@ int MaxPQ::getSize() {
 }
 
 void MaxPQ::print() {
+	int row = 1;
 	for (auto i = 1; i < m_data.size(); i++) {
-		std::cout << i << " : " << m_data[i] << std::endl;
+		if (i >= row * 2) {
+			row = row * 2;
+			std::cout << std::endl;
+		}
+		else {
+			std::cout << " ";
+		}
+		std::cout << m_data[i];
 	}
-	std::cout << std::endl;
+	std::cout << std::endl << "------------" << std::endl;
 }
 
 void MaxPQ::swim(int k) {
