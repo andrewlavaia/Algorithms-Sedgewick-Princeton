@@ -8,6 +8,8 @@ This is just some code I wrote while going through the Princeton Algorithms cour
 
 - Week1/Assignment1 -> runs a percolation test in Log(n) time on an MxN matrix (user-provided) to assess how many random boxes need to be filled to connect the top row and bottom row of a matrix.  
 
+- Week4/Assignment1 -> C++11 implementation of a binary search tree using smart pointers 
+
 ## License
 
 MIT 
