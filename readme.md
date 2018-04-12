@@ -10,6 +10,8 @@ This is just some code I wrote while going through the Princeton Algorithms cour
 
 - Week4/BinarySearchTree -> C++11 implementation of a binary search tree using smart pointers 
 
+- Week5/RedBlackBST -> custom C++11 implementation of a red black binary search tree using smart pointers 
+
 ## License
 
 MIT 
