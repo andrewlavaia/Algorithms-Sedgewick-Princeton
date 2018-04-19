@@ -14,7 +14,10 @@ public:
 
 private:
 	class Node {
+	public:
 		Node(std::string key, int val);
+		
+	private:
 		std::string key;
 		int val;
 		std::shared_ptr<Node> next;
