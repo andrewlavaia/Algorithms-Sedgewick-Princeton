@@ -3,7 +3,6 @@
 #include <cstdlib>   // rand
 
 #include "mergesort.h"
-#include "stdio.h"
 
 int main() {
 
@@ -13,10 +12,6 @@ int main() {
 	ms.sort();
 	ms.print();
 	*/
-
-	// Create a size n array and sort it
-	std::cout << !! true;
-
 
 
 	int n = 1;
